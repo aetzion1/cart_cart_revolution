@@ -53,7 +53,7 @@ class ShoppingCartTest < Minitest::Test
 
   #Iteration3
   def test_it_it_can_total_number_of_products
-    skip
+    # skip
     cart = ShoppingCart.new("King Soopers", "30items")
     product1 = Product.new(:paper, 'toilet paper', 3.70, '10')
     product2 = Product.new(:meat, 'chicken', 4.50, '2')

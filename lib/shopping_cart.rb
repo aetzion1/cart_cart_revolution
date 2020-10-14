@@ -15,11 +15,20 @@ class ShoppingCart
     details = {name: name, capacity: capacity.delete("^0-9")}
   end
 
-  # def total_number_of_products
-  #   total = 0
-  #   @products.each do |product|
-  #     total += product.quantity.to_i
+  def total_number_of_products
+    total = []
+    @products.each do |product|
+      total << product.quantity.to_i
+    end
+    total.sum
+  end
+    # @products.last.to_i.sum
+  #   products = Hash[@products.map {|key, value| [key, value]}]
+  #   products.each do |x|
+  #     sum.x[3]
   #   end
+  # end
+  #   tot
   # end
 
   def is_full?
@@ -29,7 +38,8 @@ class ShoppingCart
     end
   end
 
-  def products_by_category(x)
+  # def products_by_category(x)
+  # end
   #   @products.each do |product|
   #     if product.category == x
   #       puts product
@@ -37,4 +47,5 @@ class ShoppingCart
   #   end
   # end
     # @products.where(@product.category: x)
+
 end
