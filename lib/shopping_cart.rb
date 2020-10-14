@@ -22,17 +22,9 @@ class ShoppingCart
     end
     total.sum
   end
-    # @products.last.to_i.sum
-  #   products = Hash[@products.map {|key, value| [key, value]}]
-  #   products.each do |x|
-  #     sum.x[3]
-  #   end
-  # end
-  #   tot
-  # end
 
   def is_full?
-    if cart.total_number_of_products > @capacity
+    if total_number_of_products > @capacity.to_i
       true
     else false
     end
