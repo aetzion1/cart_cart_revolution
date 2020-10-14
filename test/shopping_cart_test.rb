@@ -53,6 +53,7 @@ class ShoppingCartTest < Minitest::Test
 
   #Iteration3
   def test_it_it_can_total_number_of_products
+    skip
     cart = ShoppingCart.new("King Soopers", "30items")
     product1 = Product.new(:paper, 'toilet paper', 3.70, '10')
     product2 = Product.new(:meat, 'chicken', 4.50, '2')
@@ -60,7 +61,7 @@ class ShoppingCartTest < Minitest::Test
     cart.add_product(product1)
     cart.add_product(product2)
     cart.add_product(product3)
-
+    # binding.pry
     assert_equal [product1, product2, product3], cart.products
     assert_equal 13, cart.total_number_of_products
   end
@@ -101,7 +102,7 @@ class ShoppingCartTest < Minitest::Test
     cart.add_product(product2)
     cart.add_product(product3)
     cart.add_product(product4)
-
+    # binding.pry
     assert_equal [product1, product3], cart.products_by_category(:paper)
   end
 
