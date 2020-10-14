@@ -1,6 +1,7 @@
 require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/product'
+require 'pry'
 
 class ProductTest < Minitest::Test
   #Iteration1
@@ -40,5 +41,18 @@ class ProductTest < Minitest::Test
 
     assert_equal 37.0, product1.total_price
     assert_equal 9.0, product2.total_price
+  end
+
+  def test_it_can_tell_whether_its_hoarded
+    product = Product.new(:paper, 'toilet paper', 3.70, '10')
+
+    refute product.is_hoarded?
+  end
+
+  def test_it_can_hoard
+    product = Product.new(:paper, 'toilet paper', 3.70, '10')
+    product.hoard
+    # binding.pry
+    assert product.is_hoarded?
   end
 end
