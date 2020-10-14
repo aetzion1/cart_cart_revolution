@@ -11,4 +11,7 @@ class ShoppingCart
     @products << product
   end
 
+  def details
+    details = {name: name, capacity: capacity.delete("^0-9")}
+  end
 end
